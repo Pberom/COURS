@@ -1,0 +1,14 @@
+﻿@model ModelPostsPage 
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<form method="post" asp-action="EditPostPost" asp-route-id="@Model.posts.IdPost">
+    <label asp-for="@Model.posts.NamePost">Наименование должности</label>
+    <input asp-for="@Model.posts.NamePost" type="text"/>
+    <label asp-for="@Model.posts.Sell">Наименование оплаты труда</label>
+    <input asp-for="@Model.posts.Sell" type="text"/>
+    <label asp-for="@Model.posts.StatusId">Статус занятости</label>
+    <input asp-for="@Model.posts.StatusId" type="text"/>
+    <span style="color: red;" asp-validation-for="@Model.posts.NamePost"></span>
+    <span style="color: red;" asp-validation-for="@Model.posts.Sell"></span>
+    <input type="submit" value="Сохранить"/>
+</form>

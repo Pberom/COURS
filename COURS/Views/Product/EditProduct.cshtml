@@ -1,0 +1,20 @@
+﻿@model ModelProductPage 
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<form method="post" asp-action="EditProductPost" asp-route-id="@Model.product.IdProduct">
+    <label asp-for="@Model.product.NameProduct">Наименование продукта</label>
+    <input asp-for="@Model.product.NameProduct" type="text"/>
+
+    <label asp-for="@Model.product.Description">Краткое описание</label>
+    <input maxlength="50" asp-for="@Model.product.Description" type="text"/>
+
+        <label asp-for="@Model.product.Sell">Цена</label>
+        <input asp-for="@Model.product.Sell" type="text"/>
+
+    <label asp-for="@Model.product.Image">Картинка</label>
+    <input asp-for="@Model.product.Image" type="text"/>
+
+    <span style="color: red;" asp-validation-for="@Model.product.NameProduct"></span>
+    <span style="color: red;" asp-validation-for="@Model.product.Sell"></span>
+    <input type="submit" value="Сохранить"/>
+</form>

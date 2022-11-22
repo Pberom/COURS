@@ -1,0 +1,16 @@
+﻿@model ModelStatusPage
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 id="idindex"></h1>
+
+<div>
+    @foreach (var a in Model.list)
+    {
+            <div style="display: flex;">
+                    <p>@a.NameStatus</p>
+            </div>
+    }
+</div>
+

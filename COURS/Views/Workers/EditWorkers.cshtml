@@ -1,0 +1,14 @@
+﻿@model ModelWorkersPage 
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<form method="post" asp-action="EditPostPost" asp-route-id="@Model.workers.IdWorker">
+    <label asp-for="@Model.workers.NameWorker">Наименование должности</label>
+    <input asp-for="@Model.workers.NameWorker" type="text"/>
+    <label asp-for="@Model.workers.SecondName">Наименование оплаты труда</label>
+    <input asp-for="@Model.workers.SecondName" type="text"/>
+    <label asp-for="@Model.workers.MiddleName">Статус занятости</label>
+    <input asp-for="@Model.workers.MiddleName" type="text"/>
+    <span style="color: red;" asp-validation-for="@Model.workers.NameWorker"></span>
+    <span style="color: red;" asp-validation-for="@Model.workers.SecondName"></span>
+    <input type="submit" value="Сохранить"/>
+</form>

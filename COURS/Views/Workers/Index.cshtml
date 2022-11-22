@@ -1,0 +1,27 @@
+﻿@model ModelWorkersPage
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 id="idindex"></h1>
+
+<div>
+    <a asp-action="EditWorkers" asp-route-id="0">Добавить сотрудника</a>
+    @foreach (var a in Model.list)
+    {
+                <div style="display: flex;">
+                    <p>@a.NameWorker</p>
+                    <p>@a.SecondName</p>
+                    <p>@a.MiddleName</p>
+                    <p>@a.Email</p>
+                    <p>@a.Inn</p>
+                    <p>@a.Password</p>
+                    <p>@a.MiddleName</p>
+                    <p>@a.PostId</p>
+                     <p>@a.RoleId</p>
+                    <a asp-action="EditPost" asp-route-id="@a.IdWorker">Изменить</a>
+                        <a asp-action="DeletePost" asp-route-id="@a.IdWorker">Удалить</a>
+                </div>
+    }
+</div>
+

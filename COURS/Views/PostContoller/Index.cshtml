@@ -1,0 +1,21 @@
+﻿@model ModelPostsPage
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 id="idindex"></h1>
+
+<div>
+    <a asp-action="EditPost" asp-route-id="0">Добавить должность</a>
+    @foreach (var a in Model.list)
+    {
+                <div style="display: flex;">
+                    <p>@a.NamePost</p>
+                    <p>@a.Sell</p>
+                    <p>@a.StatusId</p>
+                    <a asp-action="EditPost" asp-route-id="@a.IdPost">Изменить</a>
+                    <a asp-action="DeletePost" asp-route-id="@a.IdPost">Удалить</a>
+                </div>
+    }
+</div>
+

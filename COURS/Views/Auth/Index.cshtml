@@ -1,0 +1,19 @@
+﻿@model ModelRolesPage
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 id="idindex"></h1>
+
+<div>
+    <a asp-action="EditRole" asp-route-id="0">Добавить роль</a>
+    @foreach(var a in Model.list)
+    {
+        <div style="display: flex;">
+            <p>@a.NameRole</p>
+            <a asp-action="EditRole" asp-route-id="@a.IdRole">Изменить</a>
+            <a asp-action="DeleteRole" asp-route-id="@a.IdRole">Удалить</a>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,21 @@
+﻿@model ModelProductPage
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 id="idindex"></h1>
+
+<div>
+    <a asp-action="EditProduct" asp-route-id="0">Добавить продукт</a>
+    @foreach (var a in Model.list)
+    {
+                    <div style="display: flex;">
+                        <p>@a.NameProduct</p>
+                        <p>@a.Description</p>
+                        <p>@a.Sell</p>
+                        <p>@a.Image</p>
+                        <a asp-action="EditProduct" asp-route-id="@a.IdProduct">Изменить</a>
+                        <a asp-action="DeleteProduct" asp-route-id="@a.IdProduct">Удалить</a>
+                    </div>
+    }
+</div>
